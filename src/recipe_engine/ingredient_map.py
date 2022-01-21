@@ -1,8 +1,10 @@
-from typing import List, Union
+from typing import List
+import copy
 
 import yaml
 
 from data.util_tools import DATA_PATH
+from recipe_engine.ingredient import Ingredient
 from recipe_engine.recipe import Recipe
 
 
@@ -17,12 +19,12 @@ class IngredientMap(dict):
         self._load_all_recipes()
         self._load_all_ingredients()
 
-    def load_ingredient(self, name: str, amount: Union[int, float]) -> None:
-        measurement = self.get(name)
+    def load_ingredient(self, ingredient: Ingredient) -> None:
+        measurement = self.get(ingredient.name)
         if measurement is None:
-            self[name] = amount
+            self[ingredient.name] = ingredient
         else:
-            self[name] += amount
+            self[ingredient.name].increase_amount(ingredient.amount)
 
     def load_recipe(self, recipe_name: str):
         full_path: str = f"{self.RECIPE_PATH}{recipe_name.replace(' ', '_')}.yml"
@@ -38,9 +40,10 @@ class IngredientMap(dict):
     def _load_all_ingredients(self) -> None:
         for recipe in self.loaded_recipes:
             for ingredient in recipe.ingredients:
-                self.load_ingredient(name=ingredient.name, amount=ingredient.amount)
+                self.load_ingredient(ingredient=copy.deepcopy(ingredient))
 
 
 if __name__ == "__main__":
     test = IngredientMap(input_recipes=["banana_bread", "black_daal", "katsu_curry", "banana_bread"])
+    print([i.ingredients for i in test.loaded_recipes])
     print(test)

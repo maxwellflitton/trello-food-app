@@ -33,7 +33,7 @@ INGREDIENTS:
     AMOUNT: 1
     MEASUREMENT_TYPE: "tsp"
   - NAME: "breaded chicken"
-    AMOUNT: 1
+    AMOUNT: 2
     MEASUREMENT_TYPE: "count"
   - NAME: "carrot"
     AMOUNT: 1
