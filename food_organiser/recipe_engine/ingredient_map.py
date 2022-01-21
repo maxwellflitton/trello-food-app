@@ -3,9 +3,9 @@ import copy
 
 import yaml
 
-from data.util_tools import DATA_PATH
-from recipe_engine.ingredient import Ingredient
-from recipe_engine.recipe import Recipe
+from food_organiser.data.util_tools import DATA_PATH
+from food_organiser.recipe_engine.ingredient import Ingredient
+from food_organiser.recipe_engine.recipe import Recipe
 
 
 class IngredientMap(dict):

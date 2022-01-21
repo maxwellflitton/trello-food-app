@@ -1,8 +1,12 @@
 from setuptools import setup, find_packages
+import os
 
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-   name='Obcessive Food Disorder',
+   name='Food Organiser',
    version='0.1.0',
    author='maxwell flitton',
    author_email='maxwellflitton@gmail.com',
@@ -10,7 +14,7 @@ setup(
    scripts=[],
    url="https://github.com/maxwellflitton/trello-food-app",
    description='basic automation tool',
-   long_description="automation tool",
+   long_description=read('README.md'),
    package_data={
         'data': ['*']
     },
@@ -19,7 +23,7 @@ setup(
    ],
    entry_points={
        "console_scripts": [
-           "odf-inject=cli.injest:main"
+           "fo-injest=cli.injest:main"
         ]
    },
 )

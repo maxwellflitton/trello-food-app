@@ -1,7 +1,7 @@
 from typing import List
 
-from recipe_engine.ingredient import Ingredient
-from recipe_engine.step import Step
+from food_organiser.recipe_engine.ingredient import Ingredient
+from food_organiser.recipe_engine.step import Step
 
 
 class Recipe:

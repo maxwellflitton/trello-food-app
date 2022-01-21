@@ -1,6 +1,6 @@
 import shutil
 
-from data.util_tools import DATA_PATH
+from food_organiser.data.util_tools import DATA_PATH
 
 
 class RecipeLoader:

@@ -2,8 +2,8 @@ from typing import List
 
 from trello import TrelloClient
 
-from errors import BoardNotFoundError, ListNotFoundError
-from recipe_engine.ingredient_map import IngredientMap, Ingredient, Recipe
+from food_organiser.errors import BoardNotFoundError, ListNotFoundError
+from food_organiser.recipe_engine.ingredient_map import IngredientMap, Ingredient, Recipe
 
 
 class TrelloRecipeCardGenerator:
