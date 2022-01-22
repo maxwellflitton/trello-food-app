@@ -10,3 +10,8 @@ class RecipeLoader:
 
     def transfer_recipes(self) -> None:
         shutil.copytree(self.recipe_dir, DATA_PATH)
+
+    @staticmethod
+    def transfer_recipe(path: str) -> None:
+        filename: str = path.split("/")[-1]
+        shutil.copyfile(path, DATA_PATH + f"/{filename}")
