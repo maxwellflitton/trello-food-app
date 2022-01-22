@@ -19,9 +19,7 @@ def main() -> None:
 
 
 def read_recipes() -> None:
-    print(str(RecipeLoader.RECIPE_PATH) + "*.yml")
-    for i in glob.glob(str(RecipeLoader.RECIPE_PATH) + "/*.yml"):
-        print(i)
+    for i in glob.glob(str(RecipeLoader.RECIPE_PATH) + "*.yml"):
         with open(i) as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
         print(data["NAME"])
