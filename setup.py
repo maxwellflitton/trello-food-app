@@ -6,7 +6,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-   name='Food Organiser',
+   name='food_organiser',
    version='0.1.0',
    author='maxwell flitton',
    author_email='maxwellflitton@gmail.com',
@@ -23,7 +23,7 @@ setup(
    ],
    entry_points={
        "console_scripts": [
-           "fo-injest=cli.injest:main"
+           "fo-injest=food_organiser.injest:main"
         ]
    },
 )
