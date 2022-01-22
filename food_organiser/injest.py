@@ -1,6 +1,7 @@
 import argparse
 import glob
 import os
+
 import yaml
 
 from food_organiser.recipe_engine.recipe_loader import RecipeLoader
@@ -23,3 +24,7 @@ def read_recipes() -> None:
         with open(i) as f:
             data = yaml.load(f, Loader=yaml.FullLoader)
         print(data["NAME"])
+
+# TODO => Add request_menu() function (generate yml file in the cwd)
+
+# TODO => Add submit_menu() function (generate trello recipes need argument for trello spit out to txt if not)
