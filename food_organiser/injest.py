@@ -1,6 +1,7 @@
 import argparse
 import glob
 import os
+import yaml
 
 from food_organiser.recipe_engine.recipe_loader import RecipeLoader
 
@@ -16,3 +17,9 @@ def main() -> None:
         RecipeLoader.transfer_recipe(path=i)
         print(f"{i} copied to data")
 
+
+def read_recipes() -> None:
+    for i in glob.glob(RecipeLoader.RECIPE_PATH + "/*.yml"):
+        with open(i) as f:
+            data = yaml.load(f, Loader=yaml.FullLoader)
+        print(data["NAME"])
