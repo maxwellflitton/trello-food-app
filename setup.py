@@ -24,7 +24,7 @@ setup(
    entry_points={
        "console_scripts": [
            "fo-injest=food_organiser.injest:main",
-           "fo-get all=food_organiser.injest:read_recipes",
+           "fo-get-all=food_organiser.injest:read_recipes",
         ]
    },
 )
