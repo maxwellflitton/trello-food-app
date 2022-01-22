@@ -14,5 +14,5 @@ def main() -> None:
 
     for i in glob.glob(args.path + "/*.yml"):
         RecipeLoader.transfer_recipe(path=i)
-        print("{i} copied to data")
+        print(f"{i} copied to data")
 
